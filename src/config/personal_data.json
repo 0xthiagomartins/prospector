@@ -1,0 +1,40 @@
+{
+    "about": {
+        "name": "Thiago Martins",
+        "role": "Desenvolvedor Python",
+        "birthdate": "2002-03-24",
+        "location": "Brazil",
+        "profile": "Desenvolvedor Backend Python dedicado, com experiência prática na criação de aplicações web robustas e eficientes. Com um entendimento das melhores práticas de desenvolvimento e um compromisso contínuo com a aprendizagem, ofereço soluções práticas para desafios técnicos, mantendo um alto padrão de qualidade e escalabilidade de desenvolvimento. Adepto de colaboração em equipe e com habilidades de comunicação eficazes, estou sempre em busca de contribuir para projetos desafiadores e ambientes dinâmicos.",
+        "skills": [
+            "Inglês",
+            "Clean Code",
+            "Design Pattern",
+            "Desenvolvimento de Testes (integrados e unitários)",
+            "Identificação de problemas (Debugging)",
+            "RPA",
+            "Aprendizado Autônomo"
+        ],
+        "TechStack": [
+            "Python",
+            "Javascript",
+            "Linux",
+            "SQL & NoSQL",
+            "Cloud Services (AWS, Azure, GCP)",
+            "Docker",
+            "Solidity",
+            "RabbitMQ",
+            "Excel & VBA",
+            "Postman",
+            "Spark",
+            "Apache Airflow"
+        ],
+        "git-repo": [
+            "https://gitlab.com/thiagofmart",
+            "https://github.com/thiagofmart"
+        ]
+    },
+    "contact": {
+        "Celular": "+55 (11) 91964-6223",
+        "Email": "thiago.fmartins@outlook.com"
+    }
+}
