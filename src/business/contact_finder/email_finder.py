@@ -39,6 +39,6 @@ class EmailFinder(BaseService):
 
     def find_from_domain(self, domain: str) -> list[str]:
         extracted_emails = self._get_from_web_extractors(domain)
-        whois_emails = self._get_from_whois()
+        whois_emails = self._get_from_whois(domain)
         emails = set(extracted_emails + whois_emails)
         return list(emails)
