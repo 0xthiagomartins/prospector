@@ -12,6 +12,7 @@ class EmailFinder(BaseService):
         "not-in": [
             "@publicdomainregistry.com",
             "@privacyprotect.org",
+            "abuse@godaddy.com",
         ],
     }
 
