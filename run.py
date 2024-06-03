@@ -1,1 +1,1 @@
-from src.service import ProspectorService
+from src.service import Prospector
