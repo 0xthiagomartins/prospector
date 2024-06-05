@@ -23,23 +23,28 @@ class EmailFinder(BaseService):
         emails = set(emails1 + emails2 + emails3)
         return list(emails)
 
-    def __filter_emails(self, emails: list[str]):
+    def __filter_emails(self, emails: list[str]) -> list[str]:
+        not_in_clauses = set(self.email_filter["not-in"])
         filtered_emails = []
+
         for email in emails:
-            for not_in_clause in self.email_filter["not-in"]:
-                if not_in_clause not in email:
-                    filtered_emails.append(email)
+            if not any(not_in_clause in email for not_in_clause in not_in_clauses):
+                filtered_emails.append(email)
+            else:
+                for not_in_clause in not_in_clauses:
+                    if not_in_clause in email:
+                        self._log(not_in_clause)
 
         return filtered_emails
 
     def _get_from_whois(self, domain: str):
         data = whois(domain)
         emails = data.get("emails", []) or []
-        emails = self.__filter_emails(emails)
         return emails
 
     def find_from_domain(self, domain: str) -> list[str]:
         extracted_emails = self._get_from_web_extractors(domain)
         whois_emails = self._get_from_whois(domain)
-        emails = set(extracted_emails + whois_emails)
-        return list(emails)
+        emails = extracted_emails + whois_emails
+        emails = self.__filter_emails(emails)
+        return list(set(emails))
