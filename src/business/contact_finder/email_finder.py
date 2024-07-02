@@ -13,6 +13,8 @@ class EmailFinder(BaseService):
             "@publicdomainregistry.com",
             "@privacyprotect.org",
             "abuse@godaddy.com",
+            "22@",
+            "u0027@",
         ],
     }
 
