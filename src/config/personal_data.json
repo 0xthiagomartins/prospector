@@ -29,8 +29,8 @@
             "Apache Airflow"
         ],
         "git-repo": [
+            "https://github.com/thiagofmart",
             "https://gitlab.com/thiagofmart",
-            "https://github.com/thiagofmart"
         ]
     },
     "contact": {

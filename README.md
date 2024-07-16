@@ -14,3 +14,4 @@ prospector = Prospector(verbose=True)
 domain = "business_domain.com"
 business_emails =  prospector.list_emails_from_domain(domain)
 ```
+
