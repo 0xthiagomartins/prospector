@@ -7,8 +7,8 @@ class Template:
     def __init__(self, name: str, templates_file: str = "templates.json"):
         self.name = name
         self.templates_file = templates_file
-        self.subject_template = ""
-        self.body_template = ""
+        self.subject = ""
+        self.body = ""
         self.subject = ""
         self.body = ""
         self.attachments = []
@@ -23,12 +23,12 @@ class Template:
         if not template:
             raise ValueError(f"Unknown template name: {self.name}")
 
-        self.subject_template = template["subject"]
+        self.subject = template["subject"]
         body_path = template["body_path"]
-        self.body_template = self.load_body_template(body_path)
+        self.body = self.load_body(body_path)
         self.attachments = template.get("attachments", [])
 
-    def load_body_template(self, body_path: str) -> str:
+    def load_body(self, body_path: str) -> str:
         _, file_extension = os.path.splitext(body_path)
         with open(body_path, "r") as file:
             if file_extension in [".html", ".md", ".txt"]:
@@ -37,8 +37,8 @@ class Template:
                 raise ValueError(f"Unsupported file type: {file_extension}")
 
     def set(self, **kwargs):
-        self.subject = self.subject_template.format(**kwargs)
-        self.body = self.body_template.format(**kwargs)
+        self.subject = self.subject.format(**kwargs)
+        self.body = self.body.format(**kwargs)
 
     def set_attachments(self, attachments: Optional[List[str]] = None):
         if attachments:

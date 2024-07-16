@@ -14,6 +14,7 @@ class Prospector(BaseService):
     def list_emails_from_domain(self, domain):
         return EmailFinder(verbose=self.verbose).find_from_domain(domain)
 
-    def send_email(self, emails, template: str = "job_opportunity"):
+    def send_email(self, emails, template: str = "job_opportunity", **kwargs):
         template = Template(name=template)
-        return EmailSender().send_email(emails, template)
+        template.set(**kwargs)
+        return EmailSender().send_email(emails, **dict(template))
