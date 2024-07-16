@@ -3,7 +3,7 @@ import os
 from typing import Optional, List
 
 
-class Template:
+class EmailTemplate:
     def __init__(self, name: str, templates_file: str = "templates.json"):
         self.name = name
         self.templates_file = templates_file

@@ -1,5 +1,5 @@
 import base64
-from src.business.message_sender import EmailSender
+from src.business.message_sender import EmailSender, EmailTemplate
 
 
 def test_send_email():
