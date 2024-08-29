@@ -1,3 +1,4 @@
+from pprint import pprint
 from utils import BaseService
 from emailfinder.extractor import (
     get_emails_from_google,
@@ -42,6 +43,8 @@ class EmailFinder(BaseService):
     def _get_from_whois(self, domain: str):
         data = whois(domain)
         emails = data.get("emails", []) or []
+        if type(emails) == str:
+            emails = [emails]
         return emails
 
     def find_from_domain(self, domain: str) -> list[str]:
