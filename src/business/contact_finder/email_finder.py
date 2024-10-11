@@ -16,6 +16,8 @@ class EmailFinder(BaseService):
             "abuse@godaddy.com",
             "22@",
             "u0027@",
+            "jane.doe@",
+            "john.doe@",
         ],
     }
 
