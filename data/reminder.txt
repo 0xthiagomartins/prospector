@@ -1,6 +1,0 @@
-Hi {name},
-
-This is a reminder for {event} scheduled on {date}.
-
-Best regards,
-{sender_name}
