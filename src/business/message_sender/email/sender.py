@@ -1,5 +1,5 @@
 from utils import BaseService
-from src import config as cfg
+from src import settings
 from typing import Optional
 from messages import Email
 
@@ -7,11 +7,14 @@ from messages import Email
 class EmailSender(BaseService):
     def __init__(
         self,
-        username: str = cfg.Sender.email,
-        password: str = cfg.Sender.password,
+        username: str = settings.Sender.email,
+        password: str = settings.Sender.password,
+        *args,
+        **kwargs
     ):
         self.username = username
         self.password = password
+        super().__init__(*args, **kwargs)
 
     def send_email(
         self,
